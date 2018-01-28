@@ -1,12 +1,9 @@
 FROM centos:latest
 
-# Given with --build-arg
-ARG USERNAME
-ARG USERPASS
+ENV USERNAME=dev-user
 
 # User account and password
 RUN useradd -s /bin/bash -m ${USERNAME}
-RUN echo ${USERPASS} | passwd --stdin ${USERNAME}
 
 # Basic tools
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
