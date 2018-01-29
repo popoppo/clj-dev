@@ -1,5 +1,7 @@
 FROM centos:latest
 
+MAINTAINER popoppo
+
 ENV USERNAME=dev-user
 
 # User account and password
