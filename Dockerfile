@@ -13,11 +13,11 @@ RUN yum install -y bash-completion file git jq less rlwrap wget which
 RUN yum install -y java-1.8.0-openjdk
 
 # leiningen
-WORKDIR /home/${USERNAME}
-WORKDIR bin
+WORKDIR /home/${USERNAME}/bin
 RUN wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 RUN chmod +x lein
-RUN echo "export PATH=${PATH}:/home/${USERNAME}/bin" >> /home/${USERNAME}/.bashrc
+WORKDIR /home/${USERNAME}
+RUN mkdir workdir
 
 # sshd
 RUN yum install -y openssh-server
