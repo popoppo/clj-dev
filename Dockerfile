@@ -21,10 +21,5 @@ RUN chmod +x lein
 WORKDIR /home/${USERNAME}
 RUN mkdir workdir
 
-# sshd
-RUN yum install -y openssh-server
-RUN systemctl enable sshd
-
 # Misc settings
-EXPOSE 22
 CMD /sbin/init
