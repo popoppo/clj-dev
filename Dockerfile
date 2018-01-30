@@ -9,7 +9,7 @@ RUN useradd -s /bin/bash -m ${USERNAME}
 
 # Basic tools
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-RUN yum install -y bash-completion file git jq less rlwrap wget which
+RUN yum install -y bash-completion file git iproute jq less nc rlwrap wget which
 
 # java
 RUN yum install -y java-1.8.0-openjdk
